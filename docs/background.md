@@ -58,3 +58,125 @@ npm install --save-dev @testing-library/react
 Commit: <>
 
 
+# Next: Introduce a few components plus test coverage
+
+We next introduced a few components for the navigation bar
+and footer to have a basis to try out:
+* test coverage
+* mutation testing
+* Storybook
+
+### Updating test coverage to `nyc`
+
+One of the first things we found is that our old way of doing coverage was using a dependency that had not been updated in five years.  We therefore needed to update to either `nyc` or `c8`, and chose `nyc` based on [this article](https://dev.to/andrewbaisden/how-to-improve-test-coverage-in-a-javascript-react-project-235p) from Jan 6, 2023, and the fact that `nyc` had received recent updates (as recently as two months prior to August 2024).
+
+So we did:
+
+```
+npm install --save-dev nyc
+```
+
+and added this to `package.json` under `scripts`:
+
+```
+   "coverage": "nyc --reporter=html --reporter=text-summary react-scripts test --watchAll --coverage"
+```
+
+Running `npm run coverage` will bring up a test report as well
+as putting a detailed report in `frontend/coverage/lcov-report/index.html`
+
+### Absolute imports
+
+It was also necessary to make an adjustment [as described here 
+in the CRA documentation](https://create-react-app.dev/docs/importing-a-component/#absolute-imports)
+so that absolute paths would work, for example, rather than:
+
+```
+import Footer from "../../../main/components/Nav/Footer";
+```
+
+We use:
+
+```
+import Footer from "main/components/Nav/Footer";
+```
+
+### Fixing axios issue
+
+There was an issue with importing axios at first as described in [this stack overflow post](https://stackoverflow.com/questions/73958968/cannot-use-import-statement-outside-a-module-with-axios).  The fix was to update jest from version 27 to version 29.
+
+```
+npm i @jest/core
+```
+
+We also needed this in `package.json`
+
+```
+"jest": {
+   "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    },
+    ...
+}
+```
+
+### Restricting scope of code coverage
+
+We restricted the scope of code coverage with these lines in `package.json`, under `jest`:
+
+```
+ "jest": {
+    ...
+    "collectCoverageFrom": [
+      "src/main/**/*.{js,jsx,ts,tsx}"
+    ]
+  }
+```
+
+### Updating tests for React 18
+
+When upgrading from React 16 to React 18, the dependency 
+`@testing-library/react-hooks` is no longer needed (or supported) as the functionality has been moved into the core of the react testing library. 
+
+So, the following change must be made; change:
+
+```
+import { renderHook } from '@testing-library/react-hooks'
+```
+
+to this:
+
+```
+import { renderHook } from '@testing-library/react'
+```
+
+## Changing act, waitFor
+
+Any time you see this:
+
+```
+      const { result, waitFor } = renderHook(() => useCurrentUser(), { wrapper });
+```
+
+It's the old style of getting waitFor.  Instead, it should now be imported like this:
+
+In addition, this should be changed from:
+
+```
+import { act } from 'react-dom/test-utils';
+```
+
+to:
+
+```
+import { act } from '@testing-library/react'
+```
+
+### Fixed one test
+
+One test in currentUser.test.js had to be changed to include
+`initialData` as follows.  It is not immediately clear why, but there may be some difference in timing with the newer versions of node, react, etc.  
+
+```js
+            expect(result.current.data).toEqual({ initialData:true, loggedIn: false, root: null });
+```
