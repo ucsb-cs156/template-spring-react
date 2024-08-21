@@ -66,6 +66,10 @@ and footer to have a basis to try out:
 * mutation testing
 * Storybook
 
+Commit: <https://github.com/ucsb-cs156/template-spring-react/commit/d24bf91cc3431c4300e532f3f283a038bcd452c8>
+
+Here are some details:
+
 ### Updating test coverage to `nyc`
 
 One of the first things we found is that our old way of doing coverage was using a dependency that had not been updated in five years.  We therefore needed to update to either `nyc` or `c8`, and chose `nyc` based on [this article](https://dev.to/andrewbaisden/how-to-improve-test-coverage-in-a-javascript-react-project-235p) from Jan 6, 2023, and the fact that `nyc` had received recent updates (as recently as two months prior to August 2024).
@@ -180,3 +184,20 @@ One test in currentUser.test.js had to be changed to include
 ```js
             expect(result.current.data).toEqual({ initialData:true, loggedIn: false, root: null });
 ```
+
+# Add in stryker
+
+TODO
+
+# Next: add in eslint
+
+TODO
+
+
+# Next: add in prettier
+
+TODO
+
+# Next: add in storybook
+
+TODO

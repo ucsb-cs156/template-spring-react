@@ -16,7 +16,6 @@ export function useCurrentUser() {
       return { loggedIn: true, root: response.data };
     } catch (e) {
       console.error("Error invoking axios.get: ", e);
-      return { loggedIn: false, root: null };
     }
   }, {
     initialData: { loggedIn: false, root: null, initialData: true }
@@ -46,7 +45,6 @@ export function hasRole(currentUser, role) {
 
   if ("data" in currentUser &&
     "root" in currentUser.data &&
-    currentUser.data.root != null &&
     "rolesList" in currentUser.data.root) {
     return currentUser.data.root.rolesList.includes(role);
   }
