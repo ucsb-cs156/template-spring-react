@@ -64,9 +64,6 @@ describe("utils/currentUser tests", () => {
 
             expect(result.current.data).toEqual(currentUserFixtures.userOnly);
             queryClient.clear();
-
-            expect
-
         });
 
         test("useCurrentUser when API unreachable", async () => {
