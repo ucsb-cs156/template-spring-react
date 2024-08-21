@@ -1,3 +1,17 @@
+# Don't store package.json, node_modules, or package-lock.json in the top level of the repo
+
+node_modules
+package.json
+package-lock.json
+
+# Instead, git should only pickup package.json and package-lock.json
+# from the frontend directory
+
+!frontend/package.json
+!frontend/package-lock.json
+
+# JAVA
+
 # Compiled class file
 *.class
 
