@@ -28,3 +28,5 @@ yarn-error.log*
 .nyc_output/
 # stryker temp files
 .stryker-tmp
+
+*storybook.log
