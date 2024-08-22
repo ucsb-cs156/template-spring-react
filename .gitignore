@@ -1,3 +1,8 @@
+# Don't store .env file; do store .env.SAMPLE
+
+.env
+!.env.SAMPLE
+
 # Don't store package.json, node_modules, or package-lock.json in the top level of the repo
 
 node_modules
