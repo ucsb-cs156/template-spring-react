@@ -20,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "nyc --reporter=html --reporter=text-summary react-scripts test --watchAll --coverage"
+    "coverage": "nyc --reporter=html --reporter=text-summary react-scripts test --watchAll --coverage",
+    "check-format": "prettier --check \"src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "globals": "^15.9.0",
     "jest-mock-console": "^2.0.0",
     "nyc": "^17.0.0",
+    "prettier": "^3.3.3",
     "typescript-eslint": "^8.2.0"
   },
   "nyc": {
