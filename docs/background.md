@@ -202,8 +202,11 @@ Commit: <https://github.com/ucsb-cs156/template-spring-react/commit/e0aece456f70
 
 We next added in prettier, and the `npm run format` and `npm run check-format` scripts.
 
-
-
 # Next: add in storybook
 
 TODO
+
+# Next: add backend
+
+# Next: add CI/CD
+
