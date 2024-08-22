@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156/template-spring-react
 owner: ucsb-cs156
 repo_name: template-spring-react
-pull_requests: [{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-addWorkflows","number":2,"title":"pc - try adding github workflows 01, 52, 53, 54, 55 and the template for the github pages site","url":"https://github.com/ucsb-cs156/template-spring-react/pull/2"},{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-addStorybook","number":1,"title":"pc - start on adding storybook","url":"https://github.com/ucsb-cs156/template-spring-react/pull/1"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-addWorkflows","number":2,"title":"pc - try adding github workflows 01, 52, 53, 54, 55 and the template for the github pages site","url":"https://github.com/ucsb-cs156/template-spring-react/pull/2"}]
