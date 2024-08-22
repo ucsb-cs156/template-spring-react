@@ -13,4 +13,8 @@ The file [`/docs/background.md`](docs/background.md) contains an explanation of 
 |---------|-------------|
 | `npm test` | Run unit tests |
 | `npm run coverage ` | Run test coverage; detailed result in `coverage/lcov-report/index.html` |
-| `npx stryker run` | Run mutation coverage
+| `npx stryker run` | Run mutation coverage |
+| `npx eslint --fix .` | Run eslint to check for common js bugs |
+| `npm run format` | Fix formatting of frontend code |
+| `npm run check-format` | Check formatting of frontend code |
+

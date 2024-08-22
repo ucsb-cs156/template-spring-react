@@ -187,16 +187,22 @@ One test in currentUser.test.js had to be changed to include
 
 # Add in stryker
 
-TODO
+We then added Stryker mutation testing in this commit:
+
+Commit: <https://github.com/ucsb-cs156/template-spring-react/commit/c59bc96147400a7d536cb4533e1e4642cb246ab8>
 
 # Next: add in eslint
 
-TODO
+We next added in eslint, migrating to the new format for configuration, which
+is optional in version 8.x, but mandatory in version 9.x.
 
+Commit: <https://github.com/ucsb-cs156/template-spring-react/commit/e0aece456f70454ef29608716fdc6ae9a8e4acb3>
 
 # Next: add in prettier
 
-TODO
+We next added in prettier, and the `npm run format` and `npm run check-format` scripts.
+
+
 
 # Next: add in storybook
 
