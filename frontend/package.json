@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "nyc --reporter=html --reporter=text-summary react-scripts test --watchAll --coverage",
+    "coverage": "react-scripts test --watchAll=false --coverage; echo \"Coverage report is available at file://`pwd`/coverage/lcov-report/index.html\"",
     "check-format": "prettier --check \"src/**/*.{js,jsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "storybook": "storybook dev -p 6006",
