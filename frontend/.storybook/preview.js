@@ -1,10 +1,14 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "../src/index.css";
+import { initialize, mswLoader } from 'msw-storybook-addon'
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
+
+// Initialize MSW
+initialize()
 
 // Per https://storybook.js.org/docs/react/writing-stories/decorators#context-for-mocking
 // Here, we provide the context needed for some of the components,
@@ -20,7 +24,6 @@ export const decorators = [
   )
 ];
 
-
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -31,6 +34,7 @@ const preview = {
       },
     },
   },
+  loaders: [mswLoader]
 };
 
 export default preview;
