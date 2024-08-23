@@ -3,6 +3,10 @@
 .env
 !.env.SAMPLE
 
+# For Spring Boot, don't store target directory
+
+target
+
 # Don't store package.json, node_modules, or package-lock.json in the top level of the repo
 
 node_modules
