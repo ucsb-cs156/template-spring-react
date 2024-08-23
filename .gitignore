@@ -3,6 +3,9 @@
 .env
 !.env.SAMPLE
 
+# For Chromatic, don't store link to project
+frontend/chromatic.config.json
+
 # For Spring Boot, don't store target directory
 
 target
