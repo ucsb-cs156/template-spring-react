@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Nav/AppNavbarLocalhost.js</title>
+    <title>Code coverage report for layouts/BasicLayout/BasicLayout.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/Nav</a> AppNavbarLocalhost.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">layouts/BasicLayout</a> BasicLayout.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -89,22 +89,19 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,51 +115,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Container, Nav, Navbar } from "react-bootstrap";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Container } from "react-bootstrap";
+import Footer from "main/components/Nav/Footer";
+import AppNavbar from "main/components/Nav/AppNavbar";
+import { useCurrentUser, useLogout } from "main/utils/currentUser";
+import { useSystemInfo } from "main/utils/systemInfo";
 &nbsp;
-export default function AppNavbarLocalhost({ url }) {
+export default function BasicLayout({ children }) {
+  const { data: currentUser } = useCurrentUser();
+  const { data: systemInfo } = useSystemInfo();
+&nbsp;
+  const doLogout = useLogout().mutate;
+&nbsp;
   return (
-    &lt;&gt;
-      &lt;Navbar
-        expand="sm"
-        bg="warning"
-        sticky="top"
-        data-testid="AppNavbarLocalhost"
-      &gt;
-        &lt;Container&gt;
-          &lt;Navbar.Brand href="http://localhost:8080"&gt;Warning&lt;/Navbar.Brand&gt;
-&nbsp;
-          &lt;Navbar.Toggle /&gt;
-&nbsp;
-          &lt;Navbar.Collapse className="justify-content-between"&gt;
-            &lt;Nav className="mr-auto text-center"&gt;
-              &lt;Nav.Item className="text-center"&gt;
-                &lt;p&gt;
-                  Running on &lt;code&gt;{url}&lt;/code&gt; with no backend.
-                  &lt;br /&gt;
-                  You probably want{" "}
-                  &lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt;{" "}
-                  instead.
-                &lt;/p&gt;
-              &lt;/Nav.Item&gt;
-            &lt;/Nav&gt;
-          &lt;/Navbar.Collapse&gt;
-        &lt;/Container&gt;
-      &lt;/Navbar&gt;
-    &lt;/&gt;
+    &lt;div className="d-flex flex-column min-vh-100"&gt;
+      &lt;AppNavbar
+        currentUser={currentUser}
+        systemInfo={systemInfo}
+        doLogout={doLogout}
+      /&gt;
+      &lt;Container expand="xl" className="pt-4 flex-grow-1"&gt;
+        {children}
+      &lt;/Container&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
   );
 }
 &nbsp;</pre></td></tr></table></pre>
