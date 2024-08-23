@@ -48,10 +48,7 @@ public class HomePageWebIT {
         String url = String.format("http://localhost:%d/", port);
         page.navigate(url);
 
-        // assertThat(page.getByText("This is a webapp containing a bunch of different Spring Boot/React examples."))
-        //         .isVisible();
-
-        assertThat(page.getByText("Learn React"))
+        assertThat(page.getByText("This is a webapp containing a bunch of different Spring Boot/React examples."))
                 .isVisible();
     }
 
