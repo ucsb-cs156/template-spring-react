@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "main/pages/HomePage";
+import ProfilePage from "main/pages/ProfilePage";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   );
