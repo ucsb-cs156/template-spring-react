@@ -46,7 +46,7 @@ export function hasRole(currentUser, role) {
 
   if (currentUser == null) return false;
 
-  if (currentUser?.data?.root?.rolesList) {
+  if (currentUser.data?.root?.rolesList) {
     return currentUser.data.root.rolesList.includes(role);
   }
 
