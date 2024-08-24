@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@jest/core": "^29.7.0",
-    "@microlink/react-json-view": "^1.23.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.4",
@@ -20,6 +19,7 @@
     "react-scripts": "5.0.1",
     "react-table": "^7.8.0",
     "react-toastify": "^10.0.5",
+    "react18-json-view": "^0.2.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
