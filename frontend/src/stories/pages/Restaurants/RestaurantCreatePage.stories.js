@@ -1,7 +1,7 @@
 import React from "react";
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 
 import RestaurantCreatePage from "main/pages/Restaurants/RestaurantCreatePage";
 
@@ -15,15 +15,18 @@ const Template = () => <RestaurantCreatePage storybook={true} />;
 export const Default = Template.bind({});
 Default.parameters = {
   msw: [
-    rest.get("/api/currentUser", (_req, res, ctx) => {
-      return res(ctx.json(apiCurrentUserFixtures.userOnly));
+    http.get("/api/currentUser", () => {
+      return HttpResponse.json(apiCurrentUserFixtures.userOnly, {
+        status: 200,
+      });
     }),
-    rest.get("/api/systemInfo", (_req, res, ctx) => {
-      return res(ctx.json(systemInfoFixtures.showingNeither));
+    http.get("/api/systemInfo", () => {
+      return HttpResponse.json(systemInfoFixtures.showingNeither, {
+        status: 200,
+      });
     }),
-    rest.post("/api/restaurants/post", (req, res, ctx) => {
-      window.alert("POST: " + JSON.stringify(req.url));
-      return res(ctx.status(200), ctx.json({}));
+    http.post("/api/restaurants/post", () => {
+      return HttpResponse.json({}, { status: 200 });
     }),
   ],
 };

@@ -2,7 +2,7 @@ import React from "react";
 import RestaurantTable from "main/components/Restaurants/RestaurantTable";
 import { restaurantFixtures } from "fixtures/restaurantFixtures";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 
 export default {
   title: "components/Restaurants/RestaurantTable",
@@ -17,6 +17,7 @@ export const Empty = Template.bind({});
 
 Empty.args = {
   restaurants: [],
+  currentUser: currentUserFixtures.userOnly,
 };
 
 export const ThreeItemsOrdinaryUser = Template.bind({});
@@ -34,9 +35,11 @@ ThreeItemsAdminUser.args = {
 
 ThreeItemsAdminUser.parameters = {
   msw: [
-    rest.delete("/api/restaurants", (req, res, ctx) => {
-      window.alert("DELETE: " + JSON.stringify(req.url));
-      return res(ctx.status(200), ctx.json({}));
+    http.delete("/api/restaurants", () => {
+      return HttpResponse.json(
+        { message: "Restaurant deleted successfully" },
+        { status: 200 },
+      );
     }),
   ],
 };
