@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156/template-spring-react
 owner: ucsb-cs156
 repo_name: template-spring-react
-pull_requests: [{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-addRestaurantPages","number":12,"title":"pc - add components, pages, utils, routes for Restaurant crud utilities","url":"https://github.com/ucsb-cs156/template-spring-react/pull/12"}]
+pull_requests: []
