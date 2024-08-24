@@ -18,6 +18,7 @@ export const decorators = [
   (Story) => (
     <QueryClientProvider client={queryClient}>
       <MemoryRouter>
+        <ToastContainer />
         <Story />
       </MemoryRouter>
     </QueryClientProvider>
