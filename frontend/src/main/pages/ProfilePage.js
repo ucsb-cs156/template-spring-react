@@ -1,13 +1,10 @@
-import React from "react";
 import { Row, Col } from "react-bootstrap";
 import RoleBadge from "main/components/Profile/RoleBadge";
 import { useCurrentUser } from "main/utils/currentUser";
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 
-
-import JsonView from 'react18-json-view'
-import 'react18-json-view/src/style.css'
-
+import JsonView from "react18-json-view";
+import "react18-json-view/src/style.css";
 
 const ProfilePage = () => {
   const { data: currentUser } = useCurrentUser();

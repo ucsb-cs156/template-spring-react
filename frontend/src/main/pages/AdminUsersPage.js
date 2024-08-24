@@ -1,4 +1,3 @@
-import React from "react";
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import UsersTable from "main/components/Users/UsersTable";
 
