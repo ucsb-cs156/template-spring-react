@@ -35,8 +35,17 @@ describe("OurTable tests", () => {
     render(<OurTable columns={columns} data={[]} />);
   });
 
-  test("renders a table with three rows without crashing", () => {
+  test("renders a table with three rows with correct test ids", async () => {
     render(<OurTable columns={columns} data={threeRows} />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId("testid-header-group-0")).toBeInTheDocument();
+      expect(screen.getByTestId("testid-header-col1")).toBeInTheDocument();
+      expect(screen.getByTestId("testid-header-col2")).toBeInTheDocument();
+      expect(screen.getByTestId("testid-row-0")).toBeInTheDocument();
+      expect(screen.getByTestId("testid-row-1")).toBeInTheDocument();
+      expect(screen.getByTestId("testid-row-2")).toBeInTheDocument();
+    });
   });
 
   test("The button appears in the table", async () => {

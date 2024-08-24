@@ -9,15 +9,18 @@ export default function OurTable({ columns, data, testid = "testid" }) {
   return (
     <Table {...getTableProps()} striped bordered hover>
       <thead>
-        {headerGroups.map((headerGroup) => (
+        {headerGroups.map((headerGroup, i) => (
           <tr
             {...headerGroup.getHeaderGroupProps()}
-            key={`${testid}-header-group`}
+            data-testid={`${testid}-header-group-${i}`}
+            // Stryker disable next-line StringLiteral : React key property not exposed in dom
+            key={`${testid}-header-group-${i}`}
           >
             {headerGroup.headers.map((column) => (
               <th
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 data-testid={`${testid}-header-${column.id}`}
+                // Stryker disable next-line StringLiteral : React key property not exposed in dom
                 key={`${testid}-header-${column.id}`}
               >
                 {column.render("Header")}
@@ -32,14 +35,21 @@ export default function OurTable({ columns, data, testid = "testid" }) {
       <tbody {...getTableBodyProps()}>
         {rows.map((row) => {
           prepareRow(row);
+          const rowTestId = `${testid}-row-${row.index}`;
           return (
-            <tr {...row.getRowProps()} key={`${testid}-row-${row.index}`}>
+            <tr
+              {...row.getRowProps()}
+              data-testid={rowTestId}
+              // Stryker disable next-line StringLiteral : React key property not exposed in dom
+              key={rowTestId}
+            >
               {row.cells.map((cell, _index) => {
                 const testId = `${testid}-cell-row-${cell.row.index}-col-${cell.column.id}`;
                 return (
                   <td
                     {...cell.getCellProps()}
                     data-testid={testId}
+                    // Stryker disable next-line StringLiteral : React key property not exposed in dom
                     key={testId}
                   >
                     {cell.render("Cell")}
