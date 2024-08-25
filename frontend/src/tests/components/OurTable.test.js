@@ -40,12 +40,12 @@ describe("OurTable tests", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("testid-header-group-0")).toBeInTheDocument();
-      expect(screen.getByTestId("testid-header-col1")).toBeInTheDocument();
-      expect(screen.getByTestId("testid-header-col2")).toBeInTheDocument();
-      expect(screen.getByTestId("testid-row-0")).toBeInTheDocument();
-      expect(screen.getByTestId("testid-row-1")).toBeInTheDocument();
-      expect(screen.getByTestId("testid-row-2")).toBeInTheDocument();
     });
+    expect(screen.getByTestId("testid-header-col1")).toBeInTheDocument();
+    expect(screen.getByTestId("testid-header-col2")).toBeInTheDocument();
+    expect(screen.getByTestId("testid-row-0")).toBeInTheDocument();
+    expect(screen.getByTestId("testid-row-1")).toBeInTheDocument();
+    expect(screen.getByTestId("testid-row-2")).toBeInTheDocument();
   });
 
   test("The button appears in the table", async () => {
