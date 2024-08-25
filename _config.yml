@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156/template-spring-react
 owner: ucsb-cs156
 repo_name: template-spring-react
-pull_requests: []
+pull_requests: [{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-fixBrokenBuild","number":15,"title":"pc - fix problem with build by replacing package for visualizing json","url":"https://github.com/ucsb-cs156/template-spring-react/pull/15"}]
